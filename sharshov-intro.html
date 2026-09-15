@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="ru" data-lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=JetBrains+Mono:wght@500;600;800&display=swap" rel="stylesheet">
+<title>Sharshov — Python Backend Developer</title>
+    <link rel="stylesheet" href="data/css/style.css">
+    <link rel="icon" type="image/svg+xml" href="data/favicon.svg">
+    <link rel="apple-touch-icon" href="data/favicon.svg">
+</head>
+<body>
+
+<canvas id="bg-particles"></canvas>
+<div id="bg-spot"></div>
+
+<div id="topbar">
+  <div id="logo"><span class="mark"><span class="lang-ru">МШ</span><span class="lang-en">MS</span></span> Sharshov</div>
+  <div id="nav-links">
+    <a href="#about"><span class="lang-ru">Обо мне</span><span class="lang-en">About</span></a>
+    <a href="#experience"><span class="lang-ru">Опыт</span><span class="lang-en">Experience</span></a>
+    <a href="#skills"><span class="lang-ru">Технологии</span><span class="lang-en">Skills</span></a>
+    <a href="#edu-hobby"><span class="lang-ru">Образование</span><span class="lang-en">Education</span></a>
+    <a href="#contact"><span class="lang-ru">Контакты</span><span class="lang-en">Contact</span></a>
+  </div>
+  <div id="topbar-right">
+    <div id="lang-toggle">
+      <button type="button" data-set-lang="ru" class="active">RU</button>
+      <button type="button" data-set-lang="en">EN</button>
+    </div>
+  </div>
+</div>
+
+<!-- Stage 1 -->
+<div id="stage-count">
+  <div class="loadbar"><div class="loadbar-fill" id="loadbar-fill"></div></div>
+  <div class="counter" id="counter">1</div>
+</div>
+
+<!-- Stage 2 -->
+<div id="stage-name"></div>
+<div id="stage-name-text">
+  <h1>SHARSHOV</h1>
+</div>
+
+<!-- Stage 3 -->
+<div id="stage-main">
+
+  <div id="hero">
+    <div class="hero-photo-col">
+      <div class="photo-frame">
+        <img id="hero-photo" src="data/my_photo.png" alt="Maksim Sharshov"
+             onerror="this.style.display='none'; document.getElementById('hero-fallback').style.display='flex';">
+        <div id="hero-fallback">
+          <span class="lang-ru">МШ</span><span class="lang-en">MS</span>
+        </div>
+      </div>
+      <button class="photo-scroll-btn hover-bounce" id="scroll-cue-btn" aria-label="Scroll down" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
+        <svg width="16" height="10" viewBox="0 0 16 10" fill="none"><path d="M1 1L8 8L15 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+
+    <div class="content">
+
+      <div class="hero-intro">
+        <div class="pretitle"><span class="lang-ru">Привет, я</span><span class="lang-en">Hi, I'm</span></div>
+        <h1>
+          <span class="lang-ru">Максим — <span class="accent-word">Python Backend</span><br>разработчик</span>
+          <span class="lang-en">Maksim, a <span class="accent-word">Python Backend</span><br>Developer</span>
+        </h1>
+        <p class="lede">
+          <span class="lang-ru">Разрабатываю backend-сервисы, REST API и Telegram-приложения на Python — от идеи до продакшена.</span>
+          <span class="lang-en">Building backend services, REST APIs and Telegram applications in Python — from idea to production.</span>
+        </p>
+        <div class="loc">
+          <span class="lang-ru">Тирасполь, Молдова · Гибрид / удалённо</span>
+          <span class="lang-en">Tiraspol, Moldova · Hybrid / Remote</span>
+        </div>
+        <div class="follow-row">
+          <div class="follow-label"><span class="lang-ru">НА СВЯЗИ</span><span class="lang-en">FOLLOW ME</span></div>
+          <div class="follow-icons">
+            <a class="hover-bounce" href="mailto:m.sharshov.dev@gmail.com?subject=Contact%20from%20website" title="Email" aria-label="Email">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z" stroke-linejoin="round"/><path d="M4 6l8 7 8-7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a class="hover-bounce" href="https://t.me/yluxw" target="_blank" rel="noopener" title="Telegram" aria-label="Telegram">
+              <img src="https://cdn.simpleicons.org/telegram/e8e8e8" alt="Telegram">
+            </a>
+            <a class="hover-bounce" href="https://github.com/maksim-sharshov" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub">
+              <img src="https://cdn.simpleicons.org/github/e8e8e8" alt="GitHub">
+            </a>
+            <a class="hover-bounce" href="https://www.linkedin.com/in/maksim-sharshov-75a4542b4" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn">
+              <img src="https://api.iconify.design/simple-icons/linkedin.svg?color=%23ffffff" alt="LinkedIn">
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-info-col">
+        <div class="mini-block hover-bounce">
+          <div class="mini-label"><span class="lang-ru">Обо мне</span><span class="lang-en">About me</span></div>
+          <p>
+            <span class="lang-ru">3+ года опыта в разработке backend-систем, REST API и асинхронных сервисов на Python.</span>
+            <span class="lang-en">3+ years building backend systems, REST APIs and asynchronous services in Python.</span>
+          </p>
+          <a class="more" href="#about"><span class="lang-ru">Узнать больше →</span><span class="lang-en">Learn more →</span></a>
+        </div>
+        <div class="mini-block hover-bounce">
+          <div class="mini-label"><span class="lang-ru">Мои проекты</span><span class="lang-en">My work</span></div>
+          <p>
+            <span class="lang-ru">Логистические платформы, Telegram-боты и AI-микросервисы в продакшене.</span>
+            <span class="lang-en">Logistics platforms, Telegram bots and AI microservices in production.</span>
+          </p>
+          <a class="more" href="#experience"><span class="lang-ru">Смотреть опыт →</span><span class="lang-en">Browse experience →</span></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <main>
+
+    <section id="about">
+      <h2 class="reveal"><span class="lang-ru">Обо мне</span><span class="lang-en">About</span></h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p class="lang-ru reveal">Python Backend Developer с 3+ годами опыта разработки backend-систем, REST API, асинхронных сервисов и Telegram-приложений. Разрабатывал сервисы на FastAPI и Django, интегрировал сторонние API (Bitrix24) для автоматизации бизнес-процессов, настраивал production-инфраструктуру на Docker и Linux.</p>
+          <p class="lang-en reveal">Python Backend Developer with 3+ years of hands-on experience building backend systems, REST APIs, asynchronous services, and Telegram applications. Developed services with FastAPI and Django, integrated third-party APIs (Bitrix24) to automate business processes, and configured production infrastructure on Docker and Linux.</p>
+          <div class="stack-line reveal">
+            <span class="lang-ru"><b>Ключевой стек:</b> Python, FastAPI, Django, PostgreSQL, MongoDB, Redis, Docker, Linux, REST API, Git</span>
+            <span class="lang-en"><b>Core stack:</b> Python, FastAPI, Django, PostgreSQL, MongoDB, Redis, Docker, Linux, REST API, Git</span>
+          </div>
+        </div>
+        <div class="about-terminal reveal">
+          <div class="terminal">
+            <div class="terminal-header">
+              <div class="status-dot"></div>
+              <div class="title">virtu@core:~ (auto-stream)</div>
+            </div>
+            <div class="terminal-body" id="terminal-body"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2 class="reveal"><span class="lang-ru">Опыт работы</span><span class="lang-en">Experience</span></h2>
+
+      <div class="job reveal">
+        <div class="job-head">
+          <div class="job-title">TechWizards</div>
+          <div class="job-dates"><span class="lang-ru">Январь 2024 — настоящее время</span><span class="lang-en">Jan 2024 — Present</span></div>
+        </div>
+        <div class="job-sub"><span class="lang-ru">Python Backend Developer · Удалённо · Международная логистическая платформа</span><span class="lang-en">Python Backend Developer · Remote · International logistics platform</span></div>
+        <ul class="lang-ru">
+          <li>Разработал backend-сервисы на FastAPI для международной логистической платформы: веб-приложение, админ-панель и Telegram-бот.</li>
+          <li>Интегрировал Bitrix24 через REST API, автоматизировав синхронизацию между внутренними микросервисами и логистическими системами.</li>
+          <li>Построил AI-микросервис для автоматизации операций в пунктах выдачи и обработки данных.</li>
+          <li>Настроил production-инфраструктуру и деплой сервисов через Docker Compose, Nginx и Linux.</li>
+        </ul>
+        <ul class="lang-en">
+          <li>Developed backend services with FastAPI for an international logistics platform: web app, admin panel, and Telegram bot.</li>
+          <li>Integrated Bitrix24 via REST API, automating synchronization between internal microservices and logistics systems.</li>
+          <li>Built an AI microservice to automate operations at pickup points and data processing.</li>
+          <li>Configured production infrastructure and deployed services with Docker Compose, Nginx, and Linux.</li>
+        </ul>
+        <div class="stack"><span class="lang-ru"><b>Стек:</b> Python, FastAPI, Aiogram, MongoDB, Bitrix24 REST API, Docker, Nginx, Linux</span><span class="lang-en"><b>Stack:</b> Python, FastAPI, Aiogram, MongoDB, Bitrix24 REST API, Docker, Nginx, Linux</span></div>
+      </div>
+
+      <div class="job reveal">
+        <div class="job-head">
+          <div class="job-title">Loovatech</div>
+          <div class="job-dates"><span class="lang-ru">Май 2023 — Январь 2024</span><span class="lang-en">May 2023 — Jan 2024</span></div>
+        </div>
+        <div class="job-sub"><span class="lang-ru">Python Backend Developer · Удалённо · Мобильная Cash & Carry платформа</span><span class="lang-en">Python Backend Developer · Remote · Mobile Cash & Carry platform</span></div>
+        <ul class="lang-ru">
+          <li>Спроектировал REST API для мобильной Cash & Carry платформы на Django и Django REST Framework для B2C и B2B клиентов.</li>
+          <li>Автоматизировал генерацию электронных документов, ускорив обработку транзакций и выставление счетов.</li>
+          <li>Усилил безопасность системы за счёт надёжной аутентификации и шифрования межсервисного взаимодействия.</li>
+          <li>Поддерживал production-окружения на Linux, конфигурации Docker и CI/CD-пайплайны на GitHub Actions и GitLab CI.</li>
+        </ul>
+        <ul class="lang-en">
+          <li>Designed REST APIs for a mobile Cash & Carry platform using Django and Django REST Framework for B2C and B2B clients.</li>
+          <li>Automated electronic document generation, speeding up transaction processing and invoicing.</li>
+          <li>Strengthened system security through robust authentication and encrypted inter-service communication.</li>
+          <li>Maintained production environments on Linux, Docker configurations, and CI/CD pipelines using GitHub Actions and GitLab CI.</li>
+        </ul>
+        <div class="stack"><span class="lang-ru"><b>Стек:</b> Python, Django, PostgreSQL, MongoDB, Docker, Linux, REST API</span><span class="lang-en"><b>Stack:</b> Python, Django, PostgreSQL, MongoDB, Docker, Linux, REST API</span></div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2 class="reveal"><span class="lang-ru">Технический арсенал</span><span class="lang-en">Technical Arsenal</span></h2>
+      <p class="section-sub reveal">
+        <span class="lang-ru">Backend, DevOps и асинхронные Telegram-сервисы — стек, проверенный в продакшене.</span>
+        <span class="lang-en">Backend, DevOps and asynchronous Telegram services — a stack proven in production.</span>
+      </p>
+      <div class="arsenal-badge reveal">
+        <span class="lang-ru">Основной стек: Python, FastAPI, PostgreSQL</span>
+        <span class="lang-en">Core stack: Python, FastAPI, PostgreSQL</span>
+      </div>
+
+      <div class="arsenal-grid reveal-stagger">
+        <div class="tech-category reveal hover-bounce">
+          <h3><span class="cat-icon">🐍</span> <span class="lang-ru">Backend и языки</span><span class="lang-en">Backend &amp; languages</span></h3>
+          <div class="tech-items">
+            <div class="tech-item hover-bounce"><img src="https://cdn.simpleicons.org/python/3776AB" alt="">Python</div>
+            <div class="tech-item hover-bounce"><img src="https://cdn.simpleicons.org/fastapi/009688" alt="">FastAPI</div>
+            <div class="tech-item hover-bounce"><img src="https://cdn.simpleicons.org/django/44B78B" alt="">Django</div>
+            <div class="tech-item hover-bounce"><img src="https://cdn.simpleicons.org/flask/e8e8e8" alt="">Flask</div>
+            <div class="tech-item hover-bounce"><span class="glyph">{}</span>REST API</div>
+            <div class="tech-item hover-bounce"><span class="glyph">⇄</span>WebSockets</div>
+          </div>
+        </div>
+
+        <div class="tech-category reveal hover-bounce">
+          <h3><span class="cat-icon">🗄️</span> <span class="lang-ru">Базы данных</span><span class="lang-en">Databases</span></h3>
+          <div class="tech-items">
+            <div class="tech-item hover-bounce"><img src="https://cdn.simpleicons.org/postgresql/4169E1" alt="">PostgreSQL</div>
+            <div class="tech-item hover-bounce"><img src="https://cdn.simpleicons.org/redis/DC382D" alt="">Redis</div>
+            <div class="tech-item hover-bounce"><img src="https://cdn.simpleicons.org/mongodb/47A248" alt="">MongoDB</div>
+            <div class="tech-item hover-bounce"><img src="https://cdn.simpleicons.org/mysql/4479A1" alt="">MySQL</div>
+            <div class="tech-item hover-bounce"><img src="https://cdn.simpleicons.org/sqlite/3776AB" alt="">SQLite</div>
+            <div class="tech-item hover-bounce"><span class="glyph">◇</span>SQLAlchemy</div>
+          </div>
+        </div>
+
+        <div class="tech-category reveal hover-bounce">
+          <h3><span class="cat-icon">☁️</span> <span class="lang-ru">Облако и DevOps</span><span class="lang-en">Cloud &amp; DevOps</span></h3>
+          <div class="tech-items">
+            <div class="tech-item hover-bounce"><img src="https://cdn.simpleicons.org/docker/2496ED" alt="">Docker</div>
+            <div class="tech-item hover-bounce"><img src="https://cdn.simpleicons.org/nginx/009639" alt="">Nginx</div>
+            <div class="tech-item hover-bounce"><img src="https://cdn.simpleicons.org/linux/FCC624" alt="">Linux</div>
+            <div class="tech-item hover-bounce"><img src="https://cdn.simpleicons.org/githubactions/2088FF" alt="">GH Actions</div>
+            <div class="tech-item hover-bounce"><img src="https://cdn.simpleicons.org/gitlab/FC6D26" alt="">GitLab CI</div>
+            <div class="tech-item hover-bounce"><img src="https://cdn.simpleicons.org/yandexcloud/5282FF" alt="">Yandex Cloud</div>
+          </div>
+        </div>
+
+        <div class="tech-category reveal hover-bounce">
+          <h3><span class="cat-icon">🤖</span> <span class="lang-ru">Telegram и очереди</span><span class="lang-en">Telegram &amp; queues</span></h3>
+          <div class="tech-items">
+            <div class="tech-item hover-bounce"><img src="https://cdn.simpleicons.org/telegram/26A5E4" alt="">Aiogram</div>
+            <div class="tech-item hover-bounce"><img src="https://cdn.simpleicons.org/telegram/26A5E4" alt="">Telethon</div>
+            <div class="tech-item hover-bounce"><img src="https://cdn.simpleicons.org/apachekafka/e8e8e8" alt="">Kafka</div>
+            <div class="tech-item hover-bounce"><img src="https://cdn.simpleicons.org/rabbitmq/FF6600" alt="">RabbitMQ</div>
+            <div class="tech-item hover-bounce"><span class="glyph">⇄</span>Asyncio</div>
+            <div class="tech-item hover-bounce"><span class="glyph">⇄</span>Aiohttp</div>
+          </div>
+        </div>
+
+        <div class="tech-category reveal hover-bounce">
+          <h3><span class="cat-icon">🔧</span> <span class="lang-ru">Инструменты и тесты</span><span class="lang-en">Tools &amp; testing</span></h3>
+          <div class="tech-items">
+            <div class="tech-item hover-bounce"><img src="https://cdn.simpleicons.org/git/F05032" alt="">Git</div>
+            <div class="tech-item hover-bounce"><img src="https://cdn.simpleicons.org/pytest/0A9EDC" alt="">pytest</div>
+            <div class="tech-item hover-bounce"><img src="https://cdn.simpleicons.org/gnubash/4EAA25" alt="">Bash</div>
+            <div class="tech-item hover-bounce"><span class="glyph">✓</span>unittest</div>
+            <div class="tech-item hover-bounce"><span class="glyph">◇</span>Alembic</div>
+            <div class="tech-item hover-bounce"><span class="glyph">◇</span>Beanie</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="edu-hobby">
+      <h2 class="reveal"><span class="lang-ru">Образование и хобби</span><span class="lang-en">Education &amp; Hobbies</span></h2>
+
+      <div class="cards-row">
+        <div class="info-card reveal hover-bounce">
+          <h3><span class="card-icon">🎓</span> <span class="lang-ru">Образование</span><span class="lang-en">Education</span></h3>
+          <div class="edu-title"><span class="lang-ru">Приднестровский государственный университет</span><span class="lang-en">Pridnestrovian State University</span></div>
+          <div class="edu-sub"><span class="lang-ru">Бакалавриат, Программная инженерия</span><span class="lang-en">Bachelor's Degree, Software Engineering</span></div>
+          <div class="edu-meta"><span class="lang-ru">2024 — настоящее время · 3 курс · заочная форма обучения</span><span class="lang-en">2024 — Present · 3rd year · distance / part-time learning</span></div>
+
+          <div class="course-label"><span class="lang-ru">Курсовые работы:</span><span class="lang-en">Coursework:</span></div>
+          <div class="course-tags">
+            <span class="tag hover-bounce"><span class="lang-ru">Основы программирования</span><span class="lang-en">Programming fundamentals</span></span>
+            <span class="tag hover-bounce"><span class="lang-ru">Структуры данных и алгоритмы</span><span class="lang-en">Data structures &amp; algorithms</span></span>
+            <span class="tag hover-bounce"><span class="lang-ru">Системы управления базами данных</span><span class="lang-en">Database management systems</span></span>
+            <span class="tag hover-bounce"><span class="lang-ru">Компьютерные сети</span><span class="lang-en">Computer networks</span></span>
+            <span class="tag hover-bounce"><span class="lang-ru">Операционные системы</span><span class="lang-en">Operating systems</span></span>
+          </div>
+
+          <div class="lang-note">
+            <span class="lang-ru"><b>Английский язык:</b> A2</span>
+            <span class="lang-en"><b>English proficiency:</b> A2</span>
+          </div>
+        </div>
+
+        <div class="info-card reveal hover-bounce">
+          <h3><span class="card-icon">✨</span> <span class="lang-ru">Хобби и интересы</span><span class="lang-en">Hobbies &amp; Interests</span></h3>
+          <ul class="hobby-list lang-ru">
+            <li>Разработка небольших pet-проектов и автоматизация повседневных задач</li>
+            <li>Изучение устройства компьютерных систем и эксперименты с Linux</li>
+            <li>Решение логических задач и технических головоломок</li>
+            <li>Эксперименты с AI-инструментами и локальными моделями</li>
+            <li>Изучение новых технологий и инструментов для разработчиков</li>
+          </ul>
+          <ul class="hobby-list lang-en">
+            <li>Building small pet projects and automating everyday tasks</li>
+            <li>Exploring how computer systems work and experimenting with Linux</li>
+            <li>Solving logic puzzles and technical brain-teasers</li>
+            <li>Experimenting with AI tools and local models</li>
+            <li>Learning new technologies and developer tools</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2 class="reveal"><span class="lang-ru">Контакты</span><span class="lang-en">Contact</span></h2>
+      <div class="contact-grid">
+        <a class="contact-item reveal hover-bounce" href="mailto:m.sharshov.dev@gmail.com?subject=Contact%20from%20website">
+          <span class="k">Email</span><span class="v">m.sharshov.dev@gmail.com</span>
+        </a>
+        <a class="contact-item reveal hover-bounce" href="tel:+37377544985">
+          <span class="k"><span class="lang-ru">Телефон</span><span class="lang-en">Phone</span></span><span class="v">+373 77 544 985</span>
+        </a>
+        <a class="contact-item reveal hover-bounce" href="https://t.me/yluxw" target="_blank" rel="noopener">
+          <span class="k">Telegram</span><span class="v">@yluxw</span>
+        </a>
+        <a class="contact-item reveal hover-bounce" href="https://github.com/maksim-sharshov" target="_blank" rel="noopener">
+          <span class="k">GitHub</span><span class="v">github.com/maksim-sharshov</span>
+        </a>
+        <a class="contact-item reveal hover-bounce" href="https://www.linkedin.com/in/maksim-sharshov-75a4542b4" target="_blank" rel="noopener">
+          <span class="k">LinkedIn</span><span class="v"><span class="lang-ru">Профиль</span><span class="lang-en">Profile</span></span>
+        </a>
+      </div>
+      <div class="contact-row" style="margin-top:22px;">
+        <a class="chip hover-bounce" href="data/cv-en.pdf" target="_blank" rel="noopener">CV · EN (PDF)</a>
+        <a class="chip hover-bounce" href="data/cv-ru.pdf" target="_blank" rel="noopener">CV · RU (PDF)</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    © 2026 Maksim Sharshov
+  </footer>
+
+</div>
+
+    <script src="data/js/loader.js"></script>
+    <script src="data/js/background.js"></script>
+    <script src="data/js/reveal.js"></script>
+    <script src="data/js/terminal.js"></script>
+
+</body>
+</html>
