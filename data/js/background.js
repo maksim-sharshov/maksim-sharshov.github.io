@@ -13,7 +13,7 @@
   }
 
   function initParticles() {
-    const count = Math.min(180, Math.floor((w * h) / 9000));
+    const count = Math.min(800, Math.floor((w * h) / 4000));
     particles = Array.from({ length: count }, () => ({
       x: Math.random() * w,
       y: Math.random() * h,
