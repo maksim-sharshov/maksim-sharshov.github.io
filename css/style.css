@@ -347,26 +347,31 @@
   .job .stack{ font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--muted); }
   .job .stack b{ color:var(--accent); font-weight:500; }
 
-  /* ---------- Projects (timeline) ---------- */
-  .projects-timeline{ position:relative; padding-left:58px; }
+  /* ---------- Projects (alternating timeline) ---------- */
+  .projects-timeline{ position:relative; display:flex; flex-direction:column; gap:48px; padding:24px 0; }
   .projects-timeline::before{
-    content:''; position:absolute; left:19px; top:4px; bottom:4px; width:2px;
-    background:var(--line);
+    content:''; position:absolute; left:50%; top:0; bottom:0; width:2px;
+    background:var(--line); transform:translateX(-50%);
   }
-  .project{ position:relative; margin-bottom:40px; }
-  .project:last-child{ margin-bottom:0; }
+  .project{ position:relative; width:50%; box-sizing:border-box; }
+  .project:nth-child(odd){ align-self:flex-start; padding-right:46px; }
+  .project:nth-child(even){ align-self:flex-end; padding-left:46px; }
   .project-icon{
-    position:absolute; left:-58px; top:0;
+    position:absolute; top:22px;
     width:40px; height:40px; border-radius:50%;
     display:flex; align-items:center; justify-content:center;
-    border:2px solid var(--accent); background:var(--bg); z-index:1;
+    border:2px solid var(--accent); background:var(--bg); z-index:2;
   }
+  .project:nth-child(odd) .project-icon{ right:-20px; }
+  .project:nth-child(even) .project-icon{ left:-20px; }
   .project-icon svg{ width:19px; height:19px; color:var(--accent); }
   .project-content{
     border:1px solid var(--line); border-radius:14px; padding:22px 24px;
     background:var(--card-bg);
   }
   .project-content:hover{ background:var(--card-bg-hover); border-color:rgba(94,234,212,0.3); }
+  .project:nth-child(odd) .project-content{ text-align:right; }
+  .project:nth-child(even) .project-content{ text-align:left; }
   .project-head{ display:flex; justify-content:space-between; align-items:baseline; gap:14px; flex-wrap:wrap; margin-bottom:8px; }
   .project-title{ font-size:17px; font-weight:600; color:var(--fg); font-family:'Inter', sans-serif; }
   .project-link{
@@ -381,10 +386,22 @@
   .project-content p{ color:#cfcfcf; line-height:1.7; font-size:14.5px; margin:0 0 14px; }
   .project-stack{ font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--muted); line-height:1.7; }
   .project-stack b{ color:var(--accent); font-weight:500; }
+
+  @media (max-width: 860px){
+    .projects-timeline{ display:block; padding-left:58px; }
+    .projects-timeline::before{ left:19px; transform:none; }
+    .project{ width:auto; padding:0 !important; margin-bottom:40px; }
+    .project:last-child{ margin-bottom:0; }
+    .project:nth-child(odd) .project-icon,
+    .project:nth-child(even) .project-icon{ left:-58px; right:auto; top:0; }
+    .project:nth-child(odd) .project-content,
+    .project:nth-child(even) .project-content{ text-align:left; }
+  }
   @media (max-width: 560px){
     .projects-timeline{ padding-left:44px; }
     .projects-timeline::before{ left:15px; }
-    .project-icon{ left:-44px; width:32px; height:32px; }
+    .project:nth-child(odd) .project-icon,
+    .project:nth-child(even) .project-icon{ left:-44px; width:32px; height:32px; }
     .project-icon svg{ width:15px; height:15px; }
     .project-content{ padding:18px 18px; }
   }
