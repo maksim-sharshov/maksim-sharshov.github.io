@@ -26,6 +26,7 @@
   <div id="nav-links">
     <a href="#about"><span class="lang-ru">Обо мне</span><span class="lang-en">About</span></a>
     <a href="#experience"><span class="lang-ru">Опыт</span><span class="lang-en">Experience</span></a>
+    <a href="#projects"><span class="lang-ru">Проекты</span><span class="lang-en">Projects</span></a>
     <a href="#skills"><span class="lang-ru">Технологии</span><span class="lang-en">Skills</span></a>
     <a href="#edu-hobby"><span class="lang-ru">Образование</span><span class="lang-en">Education</span></a>
     <a href="#resume"><span class="lang-ru">Резюме</span><span class="lang-en">Resume</span></a>
@@ -43,6 +44,7 @@
 <nav id="mobile-menu" aria-label="Mobile navigation">
   <a href="#about"><span class="lang-ru">Обо мне</span><span class="lang-en">About</span></a>
   <a href="#experience"><span class="lang-ru">Опыт</span><span class="lang-en">Experience</span></a>
+  <a href="#projects"><span class="lang-ru">Проекты</span><span class="lang-en">Projects</span></a>
   <a href="#skills"><span class="lang-ru">Технологии</span><span class="lang-en">Skills</span></a>
   <a href="#edu-hobby"><span class="lang-ru">Образование</span><span class="lang-en">Education</span></a>
   <a href="#resume"><span class="lang-ru">Резюме</span><span class="lang-en">Resume</span></a>
@@ -203,6 +205,106 @@
           <li>Maintained production environments on Linux, Docker configurations, and CI/CD pipelines using GitHub Actions and GitLab CI.</li>
         </ul>
         <div class="stack"><span class="lang-ru"><b>Стек:</b> Python, Django, PostgreSQL, MongoDB, Docker, Linux, REST API</span><span class="lang-en"><b>Stack:</b> Python, Django, PostgreSQL, MongoDB, Docker, Linux, REST API</span></div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2 class="reveal"><span class="lang-ru">Мои проекты</span><span class="lang-en">My Projects</span></h2>
+      <p class="section-sub reveal">
+        <span class="lang-ru">Pet-проекты и эксперименты — от AI-ботов до систем анализа крипторынка.</span>
+        <span class="lang-en">Personal projects and experiments — from AI-driven bots to crypto market analysis systems.</span>
+      </p>
+
+      <div class="projects-timeline">
+
+        <div class="project reveal">
+          <div class="project-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path><rect width="20" height="14" x="2" y="6" rx="2"></rect></svg>
+          </div>
+          <div class="project-content">
+            <div class="project-head">
+              <div class="project-title">Kwork × Telegram × AI</div>
+              <a class="project-link" href="https://github.com/maksim-sharshov/kwork_messages" target="_blank" rel="noopener">GitHub →</a>
+            </div>
+            <div class="project-tagline">
+              <span class="lang-ru">Бот, который продаёт вместо тебя — пока ты спишь.</span>
+              <span class="lang-en">A bot that sells for you — while you sleep.</span>
+            </div>
+            <p class="lang-ru">Асинхронная система, которая превращает фриланс-переписку на Kwork в автоматизированный конвейер продаж через Telegram. Ведёт несколько Kwork-аккаунтов одновременно, создаёт отдельный Telegram-топик под каждого нового клиента, а ИИ-переговорщик сам ведёт диалог, держит контекст и передаёт клиента живому оператору при первом сигнале согласия.</p>
+            <p class="lang-en">An asynchronous system that turns freelance chats on Kwork into an automated Telegram sales pipeline. It runs several Kwork accounts at once, spins up a dedicated Telegram topic for every new client, and an AI negotiator carries the conversation — handing it off to a human the moment the client is ready to close.</p>
+            <div class="project-stack">
+              <span class="lang-ru"><b>Стек:</b> Python, asyncio, aiogram, SQLAlchemy + asyncpg, Redis, Docker Compose, OpenAI / Gemini</span>
+              <span class="lang-en"><b>Stack:</b> Python, asyncio, aiogram, SQLAlchemy + asyncpg, Redis, Docker Compose, OpenAI / Gemini</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project reveal">
+          <div class="project-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path><rect width="20" height="14" x="2" y="6" rx="2"></rect></svg>
+          </div>
+          <div class="project-content">
+            <div class="project-head">
+              <div class="project-title">LLM Interpreter</div>
+              <a class="project-link" href="https://github.com/maksim-sharshov/llm-interpreter" target="_blank" rel="noopener">GitHub →</a>
+            </div>
+            <div class="project-tagline">
+              <span class="lang-ru">Живой переводчик, который не даёт собеседнику шанса понять, что вы говорите на разных языках.</span>
+              <span class="lang-en">A live interpreter that never lets the conversation feel like a translation.</span>
+            </div>
+            <p class="lang-ru">Голосовой переводчик реального времени: вы говорите в микрофон — и через секунду из динамиков звучит перевод вашим же голосом, без кнопок и задержек. Конвейер из трёх нейросетей (Whisper → Llama 3.3 → edge-tts) работает на Groq, а Silero VAD сам определяет паузы в речи и отправляет аудио в нужный момент, не блокируя диалог.</p>
+            <p class="lang-en">A real-time voice interpreter — speak into the mic, and a second later the translation plays back in your own voice, no buttons, no lag. A three-model pipeline (Whisper → Llama 3.3 → edge-tts) runs on Groq, while Silero VAD detects natural pauses and sends audio at exactly the right moment without blocking the conversation.</p>
+            <div class="project-stack">
+              <span class="lang-ru"><b>Стек:</b> Python, WebSocket, Groq / Whisper / Llama 3.3, Silero VAD, edge-tts</span>
+              <span class="lang-en"><b>Stack:</b> Python, WebSocket, Groq / Whisper / Llama 3.3, Silero VAD, edge-tts</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project reveal">
+          <div class="project-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path><rect width="20" height="14" x="2" y="6" rx="2"></rect></svg>
+          </div>
+          <div class="project-content">
+            <div class="project-head">
+              <div class="project-title">ClusterScanBot</div>
+              <a class="project-link" href="https://github.com/maksim-sharshov/ClusterScanBot" target="_blank" rel="noopener">GitHub →</a>
+            </div>
+            <div class="project-tagline">
+              <span class="lang-ru">Telegram-бот, который охотится за аномалиями на крипторынке Binance Futures.</span>
+              <span class="lang-en">A Telegram bot hunting for anomalies on Binance Futures.</span>
+            </div>
+            <p class="lang-ru">Каждые 6 часов сканирует все фьючерсы и через Isolation Forest находит аномальные всплески объёма — следы крупных игроков. Раз в час строит профиль объёма и уровни Value Area (VAH/VAL/POC), каждые 5 минут проверяет приближение цены к этим уровням и присылает сигнал в Telegram вместе с готовыми OHLC-графиками и кумулятивной дельтой.</p>
+            <p class="lang-en">Every 6 hours it scans all futures pairs and uses Isolation Forest to flag anomalous volume spikes — the footprints of large players. It rebuilds volume profiles and Value Area levels (VAH/VAL/POC) hourly, checks price proximity every 5 minutes, and sends Telegram alerts with ready-made OHLC charts and cumulative delta.</p>
+            <div class="project-stack">
+              <span class="lang-ru"><b>Стек:</b> Python 3.12, aiogram 3, PostgreSQL, SQLAlchemy 2 + asyncpg, scikit-learn, pandas, NumPy, SciPy, mplfinance, Docker</span>
+              <span class="lang-en"><b>Stack:</b> Python 3.12, aiogram 3, PostgreSQL, SQLAlchemy 2 + asyncpg, scikit-learn, pandas, NumPy, SciPy, mplfinance, Docker</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project reveal">
+          <div class="project-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path><rect width="20" height="14" x="2" y="6" rx="2"></rect></svg>
+          </div>
+          <div class="project-content">
+            <div class="project-head">
+              <div class="project-title">StudyBoost</div>
+              <a class="project-link" href="https://github.com/maksim-sharshov/Study_Boost_TG_bot" target="_blank" rel="noopener">GitHub →</a>
+            </div>
+            <div class="project-tagline">
+              <span class="lang-ru">Telegram-платформа, где знания превращаются в капитал.</span>
+              <span class="lang-en">A Telegram platform where knowledge turns into currency.</span>
+            </div>
+            <p class="lang-ru">Социальная экономика для студентов: делишься конспектами — получаешь баллы, поднимаешься в рейтинге — забираешь реальные награды. Публикации проходят через ИИ-анализ тональности с переводом RU→EN, лайки формируют народный топ, а реферальная программа превращает друзей в постоянных пользователей.</p>
+            <p class="lang-en">A social economy for students: share your notes, earn points, climb the leaderboard, and claim real rewards. Posts go through AI sentiment analysis with RU→EN translation, likes shape a community-driven ranking, and a referral program turns friends into loyal users.</p>
+            <div class="project-stack">
+              <span class="lang-ru"><b>Стек:</b> Python 3, aiogram 3, SQLite + aiosqlite, VADER Sentiment + mTranslate, pandas / numpy, FSM</span>
+              <span class="lang-en"><b>Stack:</b> Python 3, aiogram 3, SQLite + aiosqlite, VADER Sentiment + mTranslate, pandas / numpy, FSM</span>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 

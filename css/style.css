@@ -347,6 +347,48 @@
   .job .stack{ font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--muted); }
   .job .stack b{ color:var(--accent); font-weight:500; }
 
+  /* ---------- Projects (timeline) ---------- */
+  .projects-timeline{ position:relative; padding-left:58px; }
+  .projects-timeline::before{
+    content:''; position:absolute; left:19px; top:4px; bottom:4px; width:2px;
+    background:var(--line);
+  }
+  .project{ position:relative; margin-bottom:40px; }
+  .project:last-child{ margin-bottom:0; }
+  .project-icon{
+    position:absolute; left:-58px; top:0;
+    width:40px; height:40px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    border:2px solid var(--accent); background:var(--bg); z-index:1;
+  }
+  .project-icon svg{ width:19px; height:19px; color:var(--accent); }
+  .project-content{
+    border:1px solid var(--line); border-radius:14px; padding:22px 24px;
+    background:var(--card-bg);
+  }
+  .project-content:hover{ background:var(--card-bg-hover); border-color:rgba(94,234,212,0.3); }
+  .project-head{ display:flex; justify-content:space-between; align-items:baseline; gap:14px; flex-wrap:wrap; margin-bottom:8px; }
+  .project-title{ font-size:17px; font-weight:600; color:var(--fg); font-family:'Inter', sans-serif; }
+  .project-link{
+    font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--accent);
+    border-bottom:1px solid var(--accent); padding-bottom:1px; white-space:nowrap;
+  }
+  .project-link:hover{ opacity:0.75; }
+  .project-tagline{
+    display:block; color:var(--accent); font-size:13.5px; font-style:italic;
+    margin-bottom:12px; font-family:'JetBrains Mono', monospace; line-height:1.5;
+  }
+  .project-content p{ color:#cfcfcf; line-height:1.7; font-size:14.5px; margin:0 0 14px; }
+  .project-stack{ font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--muted); line-height:1.7; }
+  .project-stack b{ color:var(--accent); font-weight:500; }
+  @media (max-width: 560px){
+    .projects-timeline{ padding-left:44px; }
+    .projects-timeline::before{ left:15px; }
+    .project-icon{ left:-44px; width:32px; height:32px; }
+    .project-icon svg{ width:15px; height:15px; }
+    .project-content{ padding:18px 18px; }
+  }
+
   /* ---------- Technical arsenal (skills) ---------- */
   #skills .arsenal-badge{
     display:inline-block; font-family:'JetBrains Mono', monospace; font-size:12.5px;
