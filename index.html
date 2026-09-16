@@ -17,12 +17,18 @@
 <div id="bg-spot"></div>
 
 <div id="topbar">
-  <div id="logo"><span class="mark"><span class="lang-ru">МШ</span><span class="lang-en">MS</span></span> Sharshov</div>
+  <div id="topbar-left">
+    <button id="menu-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div id="logo"><span class="mark"><span class="lang-ru">МШ</span><span class="lang-en">MS</span></span> Sharshov</div>
+  </div>
   <div id="nav-links">
     <a href="#about"><span class="lang-ru">Обо мне</span><span class="lang-en">About</span></a>
     <a href="#experience"><span class="lang-ru">Опыт</span><span class="lang-en">Experience</span></a>
     <a href="#skills"><span class="lang-ru">Технологии</span><span class="lang-en">Skills</span></a>
     <a href="#edu-hobby"><span class="lang-ru">Образование</span><span class="lang-en">Education</span></a>
+    <a href="#resume"><span class="lang-ru">Резюме</span><span class="lang-en">Resume</span></a>
     <a href="#contact"><span class="lang-ru">Контакты</span><span class="lang-en">Contact</span></a>
   </div>
   <div id="topbar-right">
@@ -32,6 +38,16 @@
     </div>
   </div>
 </div>
+
+<div id="menu-backdrop"></div>
+<nav id="mobile-menu" aria-label="Mobile navigation">
+  <a href="#about"><span class="lang-ru">Обо мне</span><span class="lang-en">About</span></a>
+  <a href="#experience"><span class="lang-ru">Опыт</span><span class="lang-en">Experience</span></a>
+  <a href="#skills"><span class="lang-ru">Технологии</span><span class="lang-en">Skills</span></a>
+  <a href="#edu-hobby"><span class="lang-ru">Образование</span><span class="lang-en">Education</span></a>
+  <a href="#resume"><span class="lang-ru">Резюме</span><span class="lang-en">Resume</span></a>
+  <a href="#contact"><span class="lang-ru">Контакты</span><span class="lang-en">Contact</span></a>
+</nav>
 
 <!-- Stage 1 -->
 <div id="stage-count">
@@ -309,6 +325,42 @@
       </div>
     </section>
 
+    <section id="resume">
+      <h2 class="reveal"><span class="lang-ru">Резюме</span><span class="lang-en">Resume</span></h2>
+      <p class="section-sub reveal">
+        <span class="lang-ru">Выберите подходящее резюме и скачайте его в формате PDF.</span>
+        <span class="lang-en">Pick the relevant resume and download it as a PDF.</span>
+      </p>
+      <div class="resume-grid reveal-stagger">
+        <div class="resume-card reveal hover-bounce">
+          <div class="resume-icon">🐍</div>
+          <h3>Python Backend Developer</h3>
+          <div class="resume-role"><span class="lang-ru">Python-разработчик</span><span class="lang-en">Python Developer</span></div>
+          <p>
+            <span class="lang-ru">Backend, REST API, FastAPI/Django, базы данных, Docker.</span>
+            <span class="lang-en">Backend, REST APIs, FastAPI/Django, databases, Docker.</span>
+          </p>
+          <div class="resume-links">
+            <a class="chip hover-bounce lang-en" href="data/Maksim_Sharshov_CV_Python.pdf" target="_blank" rel="noopener">Download · EN</a>
+            <a class="chip hover-bounce lang-ru" href="data/Максим_Шаршов_CV_Python.pdf" target="_blank" rel="noopener">Скачать · RU</a>
+          </div>
+        </div>
+        <div class="resume-card reveal hover-bounce">
+          <div class="resume-icon">⚙️</div>
+          <h3>DevOps Engineer</h3>
+          <div class="resume-role"><span class="lang-ru">DevOps-инженер</span><span class="lang-en">DevOps Engineer</span></div>
+          <p>
+            <span class="lang-ru">CI/CD, Docker, Linux, Nginx, облачная инфраструктура.</span>
+            <span class="lang-en">CI/CD, Docker, Linux, Nginx, cloud infrastructure.</span>
+          </p>
+          <div class="resume-links">
+            <a class="chip hover-bounce lang-en" href="data/Maksim_Sharshov_CV_DevOps.pdf" target="_blank" rel="noopener">Download · EN</a>
+            <a class="chip hover-bounce lang-ru" href="data/Максим_Шаршов_CV_DevOps.pdf" target="_blank" rel="noopener">Скачать · RU</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="contact">
       <h2 class="reveal"><span class="lang-ru">Контакты</span><span class="lang-en">Contact</span></h2>
       <div class="contact-grid">
@@ -328,12 +380,6 @@
           <span class="k">LinkedIn</span><span class="v"><span class="lang-ru">Профиль</span><span class="lang-en">Profile</span></span>
         </a>
       </div>
-      <div class="contact-row" style="margin-top:22px;">
-        <a class="chip hover-bounce lang-en" href="data/Maksim_Sharshov_CV_Python.pdf" target="_blank" rel="noopener">CV · Python (PDF)</a>
-        <a class="chip hover-bounce lang-en" href="data/Maksim_Sharshov_CV_DevOps.pdf" target="_blank" rel="noopener">CV · DevOps (PDF)</a>
-        <a class="chip hover-bounce lang-ru" href="data/Максим_Шаршов_CV_Python.pdf" target="_blank" rel="noopener">Резюме · Python (PDF)</a>
-        <a class="chip hover-bounce lang-ru" href="data/Максим_Шаршов_CV_DevOps.pdf" target="_blank" rel="noopener">Резюме · DevOps (PDF)</a>
-      </div>
     </section>
 
   </main>
@@ -348,6 +394,7 @@
     <script src="js/background.js"></script>
     <script src="js/reveal.js"></script>
     <script src="js/terminal.js"></script>
+    <script src="js/menu.js"></script>
 
 </body>
 </html>

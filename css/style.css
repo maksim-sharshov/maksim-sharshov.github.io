@@ -20,6 +20,7 @@
   body:not(.unlocked){ overflow:hidden; height:100%; }
   html.unlocked, html.unlocked body{ overflow:auto; }
   body{ background:var(--bg); }
+  html{ scroll-behavior:smooth; scroll-padding-top:84px; }
 
   ::selection{ background:var(--accent); color:#04201c; }
 
@@ -79,6 +80,7 @@
     border-bottom: 1px solid transparent;
   }
   #topbar.show{ opacity:1; pointer-events:auto; }
+  #topbar.menu-open{ z-index:46; }
   #topbar.scrolled{ background: rgba(10,10,10,0.72); backdrop-filter: blur(10px); border-bottom-color: var(--line); }
   #logo{
     display:flex; align-items:center; gap:10px;
@@ -106,6 +108,45 @@
   #nav-links a:hover{ color:var(--fg); }
   #nav-links a:hover::after{ transform:scaleX(1); }
   #topbar-right{ display:flex; align-items:center; gap:24px; }
+  #topbar-left{ display:flex; align-items:center; gap:10px; }
+
+  #menu-toggle{
+    display:none;
+    background:transparent; border:none; cursor:pointer; padding:0;
+    width:40px; height:40px; margin-left:-8px;
+    flex-direction:column; align-items:center; justify-content:center; gap:5px;
+  }
+  #menu-toggle span{
+    display:block; width:22px; height:2px; border-radius:2px; background:var(--fg);
+    transition: transform 0.25s ease, opacity 0.2s ease;
+  }
+  #menu-toggle.open span:nth-child(1){ transform: translateY(7px) rotate(45deg); }
+  #menu-toggle.open span:nth-child(2){ opacity:0; }
+  #menu-toggle.open span:nth-child(3){ transform: translateY(-7px) rotate(-45deg); }
+
+  #menu-backdrop{
+    position:fixed; inset:0; z-index:44; background:rgba(0,0,0,0.55);
+    opacity:0; pointer-events:none; transition:opacity 0.3s ease;
+  }
+  #menu-backdrop.open{ opacity:1; pointer-events:auto; }
+  #mobile-menu{
+    position:fixed; top:0; left:0; bottom:0; z-index:45;
+    width:min(80vw, 320px);
+    background:rgba(10,10,10,0.97); backdrop-filter:blur(12px);
+    border-right:1px solid var(--line);
+    padding:92px 18px 24px;
+    display:flex; flex-direction:column; gap:4px;
+    transform:translateX(-100%);
+    transition: transform 0.32s cubic-bezier(.4,0,.2,1);
+    overflow-y:auto;
+  }
+  #mobile-menu.open{ transform:translateX(0); }
+  #mobile-menu a{
+    font-family:'Inter', sans-serif; font-size:16px; font-weight:500;
+    color:var(--fg); padding:14px 12px; border-radius:10px;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+  #mobile-menu a:hover{ background:var(--accent-dim); color:var(--accent); }
 
   #lang-toggle{
     display:flex; border:1px solid var(--line); border-radius:999px; overflow:hidden;
@@ -118,7 +159,10 @@
   }
   #lang-toggle button.active{ color:#04201c; background:var(--accent); }
 
-  @media (max-width: 860px){ #nav-links{ display:none; } }
+  @media (max-width: 860px){
+    #nav-links{ display:none; }
+    #menu-toggle{ display:flex; }
+  }
 
   /* ---------- Stage 1: countdown ---------- */
   #stage-count{
@@ -360,6 +404,21 @@
     content:''; position:absolute; left:0; top:8px; width:6px; height:6px; border-radius:50%; background:var(--accent);
   }
   @media (max-width: 780px){ .cards-row{ grid-template-columns:1fr; } }
+
+  /* ---------- Resume cards ---------- */
+  .resume-grid{ display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+  .resume-card{
+    border:1px solid var(--line); border-radius:16px; padding:26px;
+    background:var(--card-bg);
+    display:flex; flex-direction:column;
+  }
+  .resume-card:hover{ background:var(--card-bg-hover); border-color:rgba(94,234,212,0.3); }
+  .resume-card .resume-icon{ font-size:24px; margin-bottom:12px; }
+  .resume-card h3{ font-size:18px; font-weight:700; margin:0 0 4px; font-family:'Inter',sans-serif; }
+  .resume-card .resume-role{ font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--accent); margin-bottom:14px; }
+  .resume-card p{ color:var(--muted); font-size:14px; line-height:1.6; margin:0 0 20px; }
+  .resume-card .resume-links{ display:flex; flex-wrap:wrap; gap:10px; margin-top:auto; }
+  @media (max-width: 700px){ .resume-grid{ grid-template-columns:1fr; } }
 
   .skill-group{ margin-bottom:26px; }
   .skill-group:last-child{ margin-bottom:0; }
